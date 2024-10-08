@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 20px;
+      }
+
+      .radio {
+        display: inline-flex;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .radio__input {
+        display: none;
+      }
+
+      .radio__label{
+
+
+        padding: 8px 14px;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #ffffff;
+        background: #FF0000;
+        cursor: pointer;
+        transition: background 0.1s;
+      }
+      .radio__label:not(:last-of-type) {
+        border-right: 20px solid #fff;
+      }
+      .radio__input:checked + .radio__label {
+        background: #000000;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <header>Merafong City Local Municipality</header>
+      <form action="#" class="form">
+
+         <div class="column">
+
+            <div class="select-box">
+              <select>
+                <option hidden>Customer Service Agent</option>
+                <option>Katlego</option>
+                <option>Kabelo</option>
+                <option>Nomfundo</option>
+                <option>Hazel</option>
+              
+              </select>
+            </div>
+
+            <div class="select-box">
+              <select>
+                <option hidden>Query Type</option>
+                <option>TID</option>
+                <option>Meter leaking</option>
+                <option>Meter broken</option>
+                <option>Financial query</option>
+                <option>No water</option>
+                <option>No electricity</option>
+                <option>Payment failing</option>
+                
+              </select>
+            </div>
+
+   
+          </div>
+
+
+
+<div class="input-box address">
+          <label>Query Number</label>
+          <input type="text" placeholder="" required />
+        
+        </div>
+          <div class="column">
+
+        <div class="select-box">
+              <select>
+                <option hidden>Assigned To</option>
+                <option>Number1</option>
+                <option>Number2</option>
+                <option>Number3</option>
+                
+              </select>
+            </div>
+</div>
+
+        <div class="input-box">
+          <label>Account Number</label>
+          <input type="number" placeholder="Acc No" required />
+        </div>
+
+        <div class="input-box">
+          <label>Meter Number</label>
+          <input type="number" placeholder="Meter No" required />
+        </div>
+
+   <h4>Status</h4>
+<h4></h4>
+<div class="radio">
+
+  <input class="radio__input" type="radio" value="option1" name="myRadio" id="myRadio1">
+  <label class="radio__label" for="myRadio1">Open</label>
+
+   <input class="radio__input" type="radio" value="option2" name="myRadio" id="myRadio2" onclick="openPopup()">
+
+  <label class="radio__label" for="myRadio2">Closed</label>
+
+<div class="popup" id="popup">
+<img src="tick.png">
+
+  <p>Is the query finalized?</p>
+  <button type="button" onclick="closePopup()">Okay</button> 
+  <button type="button" onclick="closePopup()">Cancel</button>
+</div>
+
+</div>
+        <div class="column">
+
+
+
+
+          <div class="input-box">
+            <label>Date</label>
+            <input type="datetime-local" placeholder=" date" required />
+
+          </div>
+        </div>
+ 
+        <div class="input-box address">
+          <label>Comments</label>
+          <input type="text" placeholder="" required />
+        
+        </div>
+        <button>Submit</button>
+      </form>
+    </section>
+<script>
+  let popup = document.getElementById("popup");
+  function openPopup(){
+    popup.classList.add("open-popup");
+  }
+   function closePopup(){
+    popup.classList.remove("open-popup");
+  }
+</script>
+
+  </body>
+</html>
